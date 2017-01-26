@@ -3,47 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <title>VueJS</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css">
   <script src="js/vue.js"></script>
 </head>
 <body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Learn VueJS</h1>
+    <p>The basic guide</p>
+    <p>
+      <a href="https://github.com/josephmtinangi/learn-vuejs" class="btn btn-primary btn-lg"><i class="fa fa-github"></i> Code</a>
+    </p>
+  </div>
+</div>
   
-  <div id="app">
-    {{ message }}
+<div class="container">
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Get Started</h3>
+    </div>
+    <div class="panel-body">
+  
+      <div id="app">
+        {{ message }}
+      </div>
+
+    </div>
   </div>
 
-  <div id="app-2">
-    <span v-bind:title="message">
-      Hover your mouse over me for a few seconds to see my dynamically bound title!
-    </span>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Dynamic binding</h3>
+    </div>
+    <div class="panel-body">
+      <div id="app-2">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds to see my dynamically bound title!
+        </span>
+      </div>
+    </div>
   </div>
 
-  <div id="app-3">
-    <p v-if="seen">Now you see me</p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">If condition</h3>
+    </div>
+    <div class="panel-body">
+      <div id="app-3">
+        <p v-if="seen">Now you see me</p>
+      </div>
+    </div>
   </div>
 
-  <div id="app-4">
-    <ol>
-      <li v-for="todo in todos">
-        {{ todo.text }}
-      </li>
-    </ol>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">For loop</h3>
+    </div>
+    <div class="panel-body">
+      <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+      </div>
+    </div>
   </div>
 
-  <div id="app-5">
-    <p>{{ message }}</p>
-    <button v-on:click="reverseMessage">Reverse Message</button>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Event listener</h3>
+    </div>
+    <div class="panel-body">
+      <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage" class="btn btn-sm btn-default">Reverse Message</button>
+      </div>
+    </div>
   </div>
 
-  <div id="app-6">
-    <p>{{ message }}</p>
-    <input v-model="message">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Two way binding</h3>
+    </div>
+    <div class="panel-body">
+      <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message" class="form-control">
+      </div>
+    </div>
   </div>
 
-  <div id="app-7">
-    <ol>
-      <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
-    </ol>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Reuseable component</h3>
+    </div>
+    <div class="panel-body">
+      <div id="app-7">
+        <ol>
+          <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+        </ol>
+      </div> 
+    </div>
   </div>
+
+</div>
 
   <script>
     var app = new Vue({
